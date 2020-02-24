@@ -376,7 +376,7 @@ internal fun <T : Any> Response<T>.parse(): Result<T> {
 class NoDataException: Exception()
 ```
 
-Modifier les méthodes du repository pour utiliser la fonction d'extension 
+Modifier les méthodes de `OnlineDataSource` pour utiliser la fonction d'extension 
 
 ```kotlin 
 suspend fun getToken(): Result<TokenResponse> {
