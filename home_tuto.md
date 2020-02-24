@@ -421,7 +421,7 @@ internal suspend fun <T : Any> safeCall(execute: suspend () -> Result<T>): Resul
 
 ```
 
-Modifiez les fonctions du Repository afin d'utiliser la fonction safeCall
+Modifiez les fonctions de `OnlineDataSource` afin d'utiliser la fonction safeCall
 
 ```kotlin
 suspend fun getToken(): Result<TokenResponse> {
@@ -431,7 +431,6 @@ suspend fun getToken(): Result<TokenResponse> {
         }
     }
 ```
-
 
 ### 5. Gestion des erreurs 
 
