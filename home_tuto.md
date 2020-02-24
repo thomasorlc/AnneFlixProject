@@ -30,7 +30,7 @@ android {
 
 ```
 
-1.2 Utilisez le databiding pour gérer la vue de HomeFragment
+1.2 Utilisez le databiding pour gérer la vue de `HomeFragment`
 
 Dans le layout `home_fragment`, ajoutez la balise <layout> </layout> à la racine du document. 
 ```xml
@@ -42,13 +42,13 @@ Dans le layout `home_fragment`, ajoutez la balise <layout> </layout> à la racin
 </layout>
 ```
 
-1.3 Utilisez le databinding dans le fragment HomeFragment 
+1.3 Utilisez le databinding dans le fragment `HomeFragment` 
 
-> Android Studio générera automatiquement une classe dont les attributs sont les objets de vue déclarer dans le fichier; le nom de chaque élément est déterminer par leur id.
+> Android Studio générera automatiquement une classe dont les attributs sont les objets de vue déclarés dans le fichier; le nom de chaque élément est déterminer par leur id.
 
-> Le nom de la classe est déterminer par le nom du fichier layout (utilisation du camelCase, les _ sont enlevés). Exemple fragment_home deviendra FragmentHomeBinding. 
+> Le nom de la classe est déterminé par le nom du fichier layout (utilisation du camelCase, les _ sont enlevés). Exemple `fragment_home` devient `FragmentHomeBinding`. 
 
-Modifiez la méthode onCreateView dans HomeFragment.kt afin d'utiliser la classe autogénérée par le databinding pour créer la vue de la home. 
+Modifiez la méthode onCreateView dans `HomeFragment` afin d'utiliser la classe autogénérée par le databinding pour créer la vue de la home. 
 
 ```kotlin
 ...
@@ -64,7 +64,7 @@ override fun onCreateView(
         return binding.root
     }
 ```
-> Le databinding nous affranchi des tâches répétitives comme findViewById pour récupérer les éléments de vue 
+> Le databinding nous affranchit des tâches répétitives comme findViewById pour récupérer les éléments de vue 
 
 Modifiez la méthode onViewCreated...
 ```kotlin
@@ -108,7 +108,7 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
 2.1 Créez les objets du modèle de données permettant de modéliser la réponse de l'API 
 
-- Dans le package response, créez une classe CategoryReponse 
+- Dans le package response, créez une classe `CategoryReponse 
 - Dans le fichier de la classe, créez les deux classes permettant de déserialiser la réponse du serveur 
 
 ```kotlin 
@@ -163,9 +163,9 @@ suspend fun getCategories(): Result<List<CategoryResponse.Genre>> {
     }
    ```
 2.4 Ajoutez la classe permettant d'exposer les catégories aux autres composants de l'application 
-> Ici, il n'y a pas d'intérêt à créer deux classes, car on veut dans tous les cas retourner la liste des catégories; nul besoin de l'encapsuler dans un autre objet. 
+> Ici, il n'y a pas d'intérêt à créer deux classes, car on veut dans tous les cas retourner la liste des catégories; pas besoin de l'encapsuler dans un autre objet. 
 
-Dans le package data, créez la classe Category 
+Dans le package data, créez la classe `Category 
 ```kotlin 
 data class Category(
     val id: Int,
@@ -345,10 +345,10 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
 ### 4. Utilisation des extensions pour éviter de dupliquer du code  
 
-Les instructions des deux méthodes du repository sont quasi similaires, on va utiliser les fonctions d'extensions et les inline function pour éviter la redondance de codes. 
+Les instructions des deux méthodes du repository sont quasi similaires, on va utiliser les fonctions d'extensions et les inline function pour limiter la redondance dans le code. 
 
 #### 4.1 Utilisez une fonction d'extension pour traiter la réponse de l'API 
-Créez une fonction d'expension sur la classe Reponse puis déplacez le code qui traite le statut de la réponse dans cette fonction. 
+Créez une fonction d'extension sur la classe `Redponse` puis déplacez le code qui traite le statut de la réponse dans cette fonction. 
 
 ```kotlin
 import retrofit2.Response
