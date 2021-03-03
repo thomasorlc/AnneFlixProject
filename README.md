@@ -20,8 +20,16 @@ Techniquement, ce projet devrait nous permettre d'expérimenter de manière plus
 - Glide : Pour afficher les images 
 - OkHttp: Client HTTP 
 
+## Critères d'acceptance
+- Une seule activité
+- Au moins 5 vues différentes (fragments) 
+- Gestion de données via une API et Room
+- Gestion de la navigation avec Navigation-fragment
+- Tests unitaires (Datasource et Repository)
+- Au moins 2 tests instrumentaires par vues
+
 ## Différentes étapes 
-1. Cloner les sources du projet sur vos machines.  
+1. Fork le repository.  
 
 2. Afficher les catégories de films. Les étapes sont décrites [ici](https://github.com/eamosse/the-movie-app/blob/master/home_tuto.md)
 
