@@ -2,7 +2,7 @@ package com.gmail.eamosse.idbdata.api.response
 
 import retrofit2.Response
 import com.gmail.eamosse.idbdata.utils.Result
-import org.chromium.net.NetworkException
+
 import java.io.IOException
 
 internal fun <T : Any> Response<T>.parse(): Result<T> {
@@ -46,3 +46,5 @@ internal suspend fun <T : Any> safeCall(execute: suspend () -> Result<T>): Resul
         }
     }
 }
+
+class NetworkException: Exception()

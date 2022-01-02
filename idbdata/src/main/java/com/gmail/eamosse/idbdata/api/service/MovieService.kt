@@ -9,6 +9,9 @@ internal interface MovieService {
     @GET("authentication/token/new")
     suspend fun getToken(): Response<TokenResponse>
 
-    @GET("/genre/movie/list")
+    @GET("genre/movie/list")
     suspend fun getCategories(): Response<CategoryResponse>
+
+    //@GET("discover/movie?")
+    //suspend fun getMoviesByCategory(@Query("with_genres") genreId: String): Response<T>
 }

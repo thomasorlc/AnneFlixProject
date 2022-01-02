@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.gmail.eamosse.idbdata.data.Category
+import com.gmail.eamosse.imdb.databinding.CategoryListItemBinding
 
 class CategoryAdapter(private val items: List<Category>) :
     RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {

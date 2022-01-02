@@ -1,5 +1,6 @@
 package com.gmail.eamosse.idbdata.api.response
 
+import com.gmail.eamosse.idbdata.data.Category
 import com.google.gson.annotations.SerializedName
 
 internal data class CategoryResponse(
@@ -11,5 +12,11 @@ internal data class CategoryResponse(
         val id: Int,
         @SerializedName("name")
         val name: String
-    ) 
+    )
 }
+
+internal fun CategoryResponse.Genre.toCategory() = Category(
+    id = id,
+    name = name
+)
+

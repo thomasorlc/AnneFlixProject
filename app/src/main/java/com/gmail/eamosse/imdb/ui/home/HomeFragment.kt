@@ -26,30 +26,8 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
-    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        homeViewModel.token.observe(
-            viewLifecycleOwner,
-            Observer {
-                binding.textHome.text = "${it.requestToken} - ${it.expiresAt}"
-            }
-        )
-
-        homeViewModel.error.observe(
-            viewLifecycleOwner,
-            Observer {
-                binding.textHome.text = "Erreur $it"
-            }
-        )
-
-        binding.buttonHome.setOnClickListener {
-            val action = HomeFragmentDirections
-                .actionHomeFragmentToHomeSecondFragment("From HomeFragment")
-            NavHostFragment.findNavController(this@HomeFragment)
-                .navigate(action)
-        }
 
         with(homeViewModel) {
             token.observe(viewLifecycleOwner, Observer {
