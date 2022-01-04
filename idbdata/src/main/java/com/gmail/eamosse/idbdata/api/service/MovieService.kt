@@ -13,5 +13,6 @@ internal interface MovieService {
     suspend fun getCategories(): Response<CategoryResponse>
 
     //@GET("discover/movie?")
+    // ? => filtre avec @Query (cf: theMovieDB doc)
     //suspend fun getMoviesByCategory(@Query("with_genres") genreId: String): Response<T>
 }
