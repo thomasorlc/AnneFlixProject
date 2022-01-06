@@ -4,6 +4,7 @@ import com.gmail.eamosse.idbdata.api.response.toCategory
 import com.gmail.eamosse.idbdata.api.response.toEntity
 import com.gmail.eamosse.idbdata.api.response.toToken
 import com.gmail.eamosse.idbdata.data.Category
+import com.gmail.eamosse.idbdata.data.Movie
 import com.gmail.eamosse.idbdata.data.Token
 import com.gmail.eamosse.idbdata.datasources.LocalDataSource
 import com.gmail.eamosse.idbdata.datasources.OnlineDataSource
@@ -49,5 +50,18 @@ class MovieRepository : KoinComponent {
             is Result.Error -> result
         }
     }
+
+    /*suspend fun getMovies(): Result<List<Movie>>{
+        return when (val result = online.getCategories()) {
+            is Result.Succes -> {
+                /// CF MovieResponse.kt pour finir la fonction
+                val movies = result.data.map{
+                    it.toMovie()
+                }
+                Result.Succes(movies)
+            }
+            is Result.Error -> result
+        }
+    }*/
 }
 

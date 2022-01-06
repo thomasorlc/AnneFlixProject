@@ -7,8 +7,15 @@ internal data class MovieResponse(
     @SerializedName("movies")
     val movies: List<Movie>
 ){
-    data class Movie(
-        @SerializedName("id")
-        val id: Int,
+    data class MovieInformation(
+        @SerializedName("Titre")
+        val titre: String
     )
 }
+
+//internal fun MovieResponse.MovieInformation.toMovie() = Movie(
+//    ///A changer pour que les variable match!!
+//    page = page,
+//    resultList = listeFilm,
+//
+//)
