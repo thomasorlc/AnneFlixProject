@@ -49,5 +49,14 @@ Techniquement, ce projet devrait nous permettre d'expérimenter de manière plus
     - Captures d'écrans des principales vues 
     - Vidéos de démonstration de l'application 
 
+## Contexte
+
+
+## Membres du groupe 
+- Thomas OURLIAC
+- Antoine DERIAN
+- Maxime CRAVERO
+- Safae GUERCHE
+
 
 
